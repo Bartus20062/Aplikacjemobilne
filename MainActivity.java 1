@@ -1,0 +1,32 @@
+package com.example.button;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Toast;
+
+
+public class MainActivity extends AppCompatActivity {
+    private Button buttonDisable;
+
+    @Override
+    protected void onCreate(Bundle saveInstanceState) {
+        super.onCreate(saveInstanceState);
+        setContentView(R.layout.activity_main);
+
+    //inicjalizacja przycisku przez id z pliku xml
+        buttonDisable = findViewById(R.id.buttonDisable);
+
+        //ustawienie nasluchiwania na klikniecie przycisku
+        buttonDisable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Po kliknieciu przycisk zostaje dezaktywowany
+                buttonDisable.setEnabled(false);
+            // wyswietlenie powiadomienia
+                Toast.makeText(MainActivity.this, "Przycisk zostal wylaczony", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+}

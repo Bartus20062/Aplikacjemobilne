@@ -2,20 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <Button
         android:id="@+id/buttonDisable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kliknij mnie"
-        android:textSize="18sp"/>
+        android:text="kliknij mnie"
+        android:textSize="18sp" />
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonEnable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kliknij"
-        android:textSize="20sp"/>
+        android:text="odnów"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Counter: "
+        android:textSize="18sp" />
+
 </LinearLayout>

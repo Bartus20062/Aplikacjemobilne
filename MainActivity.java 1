@@ -1,31 +1,38 @@
 package com.example.button;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.Toast;
+import android.view.View;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
     private Button buttonDisable;
+    private Button buttonEnable;
+    private TextView counter;
+    int count = 0;
 
     @Override
-    protected void onCreate(Bundle saveInstanceState) {
-        super.onCreate(saveInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    //inicjalizacja przycisku przez id z pliku xml
-        buttonDisable = findViewById(R.id.buttonDisable);
+        buttonDisable =findViewById(R.id.buttonDisable);
+        buttonEnable =findViewById(R.id.buttonEnable);
+        counter =findViewById(R.id.counter);
+        String text = "counter: ";
 
-        //ustawienie nasluchiwania na klikniecie przycisku
-        buttonDisable.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Po kliknieciu przycisk zostaje dezaktywowany
+        buttonDisable.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
                 buttonDisable.setEnabled(false);
-            // wyswietlenie powiadomienia
-                Toast.makeText(MainActivity.this, "Przycisk zostal wylaczony", Toast.LENGTH_SHORT).show();
+                count++;
+                counter.setText(text+count);
+            }
+        });
+        buttonEnable.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                buttonDisable.setEnabled(true);
             }
         });
     }
